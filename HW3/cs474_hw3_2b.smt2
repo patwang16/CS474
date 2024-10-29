@@ -1,0 +1,22 @@
+(declare-const l1 Real)
+(declare-const u1 Real)
+(declare-const l2 Real)
+(declare-const u2 Real)
+(declare-const l3 Real)
+(declare-const u3 Real)
+(declare-const l4 Real)
+(declare-const u4 Real)
+
+(assert (and (not (or (< l1 u3)(< l3 u1)))
+             (not (or (< l2 u4)(< l4 u2)))
+             (or (< l2 u1)(< l1 u2))
+             (or (< l3 u2)(< l2 u3))
+             (or (< l4 u1)(< l1 u4))
+             (or (< l4 u3)(< l3 u4))
+             (< l1 u1)
+             (< l2 u2)
+             (< l3 u3)
+             (< l4 u4)))
+
+
+(check-sat)
